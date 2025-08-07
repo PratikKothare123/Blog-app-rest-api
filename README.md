@@ -20,6 +20,7 @@ blog-app/
 ├── script.js # All JS logic
 ├── db.json # Fake backend data (JSON Server)
 
+
 ## 🔗 API Endpoints
 
 - `GET /blogs` – fetch all posts
