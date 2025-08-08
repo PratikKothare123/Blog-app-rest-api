@@ -47,13 +47,12 @@ app.post("/blogs",(req,res)=>{
     let {title,short_content}=req.body;
     let id = uuidv4();
     blogs.push({title,short_content,id});
-    res.redirect("/blogs")
+    res.redirect("/blogs");
 });
 
 app.get("/blogs/:id",(req,res)=>{
     let {id}=req.params;
     let blog=blogs.find((b)=> id===b.id);
-    // console.log(blog);
     res.render("read.ejs",{blog});
 });
 
@@ -61,23 +60,20 @@ app.patch("/blogs/:id",(req,res)=>{
     let {id}=req.params;
     let newTitle=req.body.title;
     let NewSort=req.body.short_content;
-    let blog=blogs.find((b)=> id===b.id);
+    blog=blogs.find((b)=> id===b.id);
     blog.short_content=NewSort;
     blog.title=newTitle;
     console.log(blog);
     res.redirect("/blogs");
 });
 
-// app.get("/blogs",(req,res)=>{
+app.get("/blogs/:id/edit",(req,res)=>{
+    let {id}=req.params;
+    let blog=blogs.find((b)=> id===b.id);
+    res.render("edit.ejs",{blog});
 
-// })
-
-
-
-
-
-
+});
 
 app.listen(port,()=>{
     console.log(`Listing on port: ${port}`);
-})
+});
