@@ -60,7 +60,7 @@ app.patch("/blogs/:id",(req,res)=>{
     let {id}=req.params;
     let newTitle=req.body.title;
     let NewSort=req.body.short_content;
-    blog=blogs.find((b)=> id===b.id);
+    blogs.find((b)=> id===b.id);
     blog.short_content=NewSort;
     blog.title=newTitle;
     console.log(blog);
