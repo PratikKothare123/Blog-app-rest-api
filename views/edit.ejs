@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h2>Edit your Blog</h2>
@@ -11,6 +12,7 @@
     <h3>Blog Title: <%= blog.title %></h3>
     <form method="post" action="/blogs/<%= blog.id %>?_method=PATCH">
         <textarea name="short_content"><%= blog.short_content  %></textarea>
+        <textarea name="full_containt"><%= blog.full_containt  %></textarea>
         <button>Submit</button>
     </form>
 </body>

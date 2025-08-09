@@ -20,18 +20,15 @@ let blogs=[
     {
         id: uuidv4(),
         title: "pratik kothare",
-        short_content: "i'm from nagpur.............."
+        short_content: "i'm from nagpur..............",
+        full_containt:""
     },
     {
         id: uuidv4(),
         title: "School Day's",
-        short_content: "At a Day............."
-    },
-    {
-        id: uuidv4(),
-        title: "pratik kothare",
-        short_content: "After that Day............"
-    },
+        short_content: "At a Day.............",
+        full_containt:""
+    }
 ];
 
 app.get("/blogs",(req,res)=>{
@@ -44,9 +41,9 @@ app.get("/blogs/new",(req,res)=>{
 });
 
 app.post("/blogs",(req,res)=>{
-    let {title,short_content}=req.body;
+    let {title,short_content,full_containt}=req.body;
     let id = uuidv4();
-    blogs.push({title,short_content,id});
+    blogs.push({title,short_content,id,full_containt});
     res.redirect("/blogs");
 });
 
@@ -59,9 +56,10 @@ app.get("/blogs/:id",(req,res)=>{
 app.patch("/blogs/:id",(req,res)=>{
     let {id}=req.params;
     let NewSort=req.body.short_content;
+    let NewFull=req.body.full_containt;
     let blog=blogs.find((b)=> id===b.id);
     blog.short_content=NewSort;
-    // console.log(blog);
+    blog.full_containt=NewFull;
     res.redirect("/blogs");
 });
 
@@ -75,8 +73,8 @@ app.delete("/blogs/:id",(req,res)=>{
     let {id}=req.params;
     blogs=blogs.filter((b)=> id !== b.id);
     res.redirect("/blogs");
-
 });
+
 app.listen(port,()=>{
     console.log(`Listing on port: ${port}`);
 });
