@@ -14,7 +14,9 @@
                 <h3 class="short_content">Short Content: <%= blog.short_content %></h3>
                 <a href="http://localhost:8080/blogs/<%= blog.id %>">Read more</a> &nbsp &nbsp 
                  <a href="http://localhost:8080/blogs/<%= blog.id %>/edit">Edit</a> &nbsp&nbsp&nbsp
-                <a href="">Delete</a>
+                 <form method="POST"action="/blogs/<%= blog.id %>?_method=DELETE">
+                    <button>DELETE BLOG</button>
+                 </form>
    
             </div>
          <% } %>

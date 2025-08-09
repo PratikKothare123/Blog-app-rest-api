@@ -58,12 +58,10 @@ app.get("/blogs/:id",(req,res)=>{
 
 app.patch("/blogs/:id",(req,res)=>{
     let {id}=req.params;
-    let newTitle=req.body.title;
     let NewSort=req.body.short_content;
-    blogs.find((b)=> id===b.id);
+    let blog=blogs.find((b)=> id===b.id);
     blog.short_content=NewSort;
-    blog.title=newTitle;
-    console.log(blog);
+    // console.log(blog);
     res.redirect("/blogs");
 });
 
@@ -71,9 +69,14 @@ app.get("/blogs/:id/edit",(req,res)=>{
     let {id}=req.params;
     let blog=blogs.find((b)=> id===b.id);
     res.render("edit.ejs",{blog});
-
 });
 
+app.delete("/blogs/:id",(req,res)=>{
+    let {id}=req.params;
+    blogs=blogs.filter((b)=> id !== b.id);
+    res.redirect("/blogs");
+
+});
 app.listen(port,()=>{
     console.log(`Listing on port: ${port}`);
 });

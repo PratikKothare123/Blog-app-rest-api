@@ -9,8 +9,7 @@
     <h2>Edit your Blog</h2>
     <h3>Blog ID: <%= blog.id %></h3>
     <h3>Blog Title: <%= blog.title %></h3>
-
-    <form method="post" action="/blogs/<%= blog.id %> ?_method=PATCH">
+    <form method="post" action="/blogs/<%= blog.id %>?_method=PATCH">
         <textarea name="short_content"><%= blog.short_content  %></textarea>
         <button>Submit</button>
     </form>
