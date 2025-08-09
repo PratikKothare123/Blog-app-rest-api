@@ -4,7 +4,7 @@
   "description": "A simple blog application built with HTML, CSS, and JavaScript using `json-server` to simulate a backend API. Perform full CRUD operations (Create, Read, Update, Delete) via REST API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "start": "node index.js"
   },
   "keywords": [],
   "author": "Pratik Kothare",
@@ -15,4 +15,5 @@
     "method-override": "^3.0.0",
     "uuid": "^11.1.0"
   }
+
 }
