@@ -31,10 +31,6 @@ let blogs=[
         full_containt:""
     }
 ];
-// Add a GET route for the root path '/'
-app.get('/', (req, res) => {
-  res.send('Welcome! The Blog REST API is running.');
-});
 
 app.get("/blogs",(req,res)=>{
     res.render("index.ejs",{blogs});
