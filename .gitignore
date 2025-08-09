@@ -1,0 +1,12 @@
+# Dependencies
+# This ignores the entire folder where your downloaded libraries are stored.
+node_modules/
+
+# Environment Variables
+# This ignores files that hold secret keys, passwords, and other private info.
+# This is VERY important for security!
+.env
+
+# Logs
+# This ignores log files that are generated during debugging.
+npm-debug.log
