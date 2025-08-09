@@ -31,7 +31,10 @@ let blogs=[
         full_containt:""
     }
 ];
-
+// This route tells Express what to do for the main URL
+app.get('/', (req, res) => {
+  res.render('index.ejs', { blogs: blogs });
+});
 app.get("/blogs",(req,res)=>{
     res.render("index.ejs",{blogs});
 });
