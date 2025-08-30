@@ -39,7 +39,6 @@ app.get("/blogs",(req,res)=>{
     res.render("index.ejs",{blogs});
 });
 
-
 app.get("/blogs/new",(req,res)=>{
     res.render("new.ejs",{blogs});
 });
